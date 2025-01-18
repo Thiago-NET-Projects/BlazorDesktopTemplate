@@ -38,7 +38,7 @@
             webView.Dock = DockStyle.Fill;
             webView.Location = new Point(0, 0);
             webView.Name = "webView";
-            webView.Size = new Size(1264, 681);
+            webView.Size = new Size(784, 561);
             webView.StartPath = "/";
             webView.TabIndex = 0;
             webView.Text = "blazorWebView1";
@@ -52,12 +52,11 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1264, 681);
+            ClientSize = new Size(784, 561);
             Controls.Add(webView);
             Name = "MainForm";
             Text = "My Blazor APP";
             WindowState = FormWindowState.Maximized;
-            ((System.ComponentModel.ISupportInitialize)fileSystemWatcher1).EndInit();
             ResumeLayout(false);
         }
 

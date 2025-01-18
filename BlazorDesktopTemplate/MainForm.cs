@@ -1,3 +1,5 @@
+using BlazorDesktopTemplate.lib;
+using BlazorDesktopTemplate.src;
 using Microsoft.AspNetCore.Components.WebView.WindowsForms;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -13,12 +15,10 @@ namespace BlazorDesktopTemplate
 
         private void InitializeWebView()
         {
-            var services = new ServiceCollection();
-            services.AddWindowsFormsBlazorWebView();
-            services.AddSingleton(this);
-            webView.HostPage = "wwwroot\\index.html";
-            webView.Services = services.BuildServiceProvider();
-            webView.RootComponents.Add<MainComponent>("#app");
+            var dependency = new DependencyInjection<MainComponent>(webView);
+            dependency.Services.AddSingleton(this);
+            Ioc.Configure(dependency.Services);
+            dependency.Build();
         }
 
         public void ShowMessage()
